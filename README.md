@@ -23,3 +23,29 @@ waru
 ```
 waru router a.mynode.com b.mynode.com c.mynode.com
 ```
+
+# Writing a processor 
+
+```rust
+extern "C" {
+    fn console_log(start: i32);
+}
+
+fn cstr(s:&str) -> i32{
+    std::ffi::CString::new(s).unwrap().into_raw() as i32
+}
+
+#[no_mangle]
+pub fn malloc(size) -> i32 {
+    0
+}
+
+#[no_mangle]
+pub fn count_bytes(p_data) -> i32 {
+    unsafe {
+        console_log(cstr("processing starting!"));
+        ... do something with data ...
+        ... return pointer to output data structure
+    }
+}
+```
