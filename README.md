@@ -11,3 +11,15 @@ Distributed map reduce using web assembly
 /POST/mapreduce/<function>
 * takes in data to map reduce as a json array in body
 * returns a json array of results
+
+# Running as a node
+
+```
+waru
+```
+
+# Running as a router
+
+```
+waru router a.mynode.com b.mynode.com c.mynode.com
+```
