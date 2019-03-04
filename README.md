@@ -5,7 +5,7 @@ Distributed map reduce using web assembly
 /GET/info
 * returns json info about this waru node
 
-/POST/kernel
+/POST/processor
 * takes in bytes of a web assembly module as bytes of body to used as map reduce processor
 
 /POST/mapreduce/<function>
@@ -24,7 +24,7 @@ waru
 waru router a.mynode.com b.mynode.com c.mynode.com
 ```
 
-# Writing a processor 
+# Writing a map reduce processor 
 
 ```rust
 #[no_mangle]
