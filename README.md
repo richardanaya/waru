@@ -37,14 +37,14 @@ fn cstr(s:&str) -> i32{
 
 #[no_mangle]
 pub fn malloc(size) -> i32 {
-    0
+    ... allocate size for input data and return pointer to its beginning ...
 }
 
 #[no_mangle]
 pub fn count_bytes(p_data) -> i32 {
     unsafe {
         console_log(cstr("processing starting!"));
-        ... do something with data ...
+        ... do something with pointer to input data ...
         ... return pointer to output data structure
     }
 }
