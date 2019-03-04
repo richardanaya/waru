@@ -52,5 +52,5 @@ pub fn count_bytes(p_data) -> i32 {
 
 ```
 curl -X POST -H "Content-Type: application/json" -d count_bytes.wasm http://router.mynode.com
-curl -X POST -H "Content-Type: application/json" -d '[1,2,3]' http://router.mynode.com/mapreduce/count_bytes
+curl -X POST -H "Content-Type: application/wasm" -d '[1,2,3]' http://router.mynode.com/mapreduce/count_bytes
 ```
